@@ -1,0 +1,35 @@
+.card {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin-bottom: 0 !important;
+}
+
+.card-content {
+  margin-top: 30px;
+  padding: 15px;
+}
+
+table {
+  width: 100%;
+}
+
+.table-actions {
+  width: 10% !important;
+  min-width: 106px;
+  padding: 0 !important;
+}
+
+.no-data {
+  width: 100%;
+  text-align: center;
+}

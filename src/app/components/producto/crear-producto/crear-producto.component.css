@@ -1,0 +1,32 @@
+.card {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  margin-bottom: 0 !important;
+}
+
+.card-content {
+  margin-top: 30px;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.card-actions {
+  margin: 0 !important;
+}
+
+.save {
+  width: 100%;
+}

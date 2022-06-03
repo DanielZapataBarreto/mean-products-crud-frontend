@@ -1,0 +1,59 @@
+<app-header></app-header>
+<mat-card class="card">
+  <mat-card-header class="card-header">
+    <mat-card-title class="card-title">{{ titulo }}</mat-card-title>
+    <div>
+      <button type="submit" mat-raised-button routerLink="/">VOLVER</button>
+    </div>
+  </mat-card-header>
+  <form (ngSubmit)="save()" [formGroup]="form">
+    <mat-card-content class="card-content">
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" autocomplete="off" />
+        <mat-error *ngIf="hasError('name', 'required')"
+          >El campo "Nombre" es requerido</mat-error
+        >
+        <mat-error *ngIf="hasError('name', 'maxlength')"
+          >El campo "Nombre" no debe tener más de 50 caracteres</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category" autocomplete="off" />
+        <mat-error *ngIf="hasError('category', 'required')"
+          >El campo "Categoría" es requerido</mat-error
+        >
+        <mat-error *ngIf="hasError('category', 'maxlength')"
+          >El campo "Categoría" no debe tener más de 50 caracteres</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field class="input" appearance="fill">
+        <mat-label>Precio (S/.)</mat-label>
+        <input
+          matInput
+          formControlName="price"
+          type="number"
+          autocomplete="off"
+        />
+        <mat-error *ngIf="hasError('price', 'required')"
+          >El campo "Precio" es requerido</mat-error
+        >
+        <mat-error *ngIf="hasError('price', 'min')"
+          >El campo "Precio" no puede ser negativo</mat-error
+        >
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="card-actions">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+        class="save"
+        [disabled]="form.invalid"
+      >
+        CREAR
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
